@@ -30,14 +30,20 @@ def main():
              kk_rct.move_ip(-1, 0)  # 練習１０－４
         if key_lst[pg.K_RIGHT]:
              kk_rct.move_ip(+1, 0)  # 練習１０－４
+        else:
+             kk_rct.move_ip(-1, 0) #押してない時左に動く 演習1
+        x=tmr%3200
         
         
-        x= tmr%3200
+        #kk_rct.center = -x+400, 200
         screen.blit(bg_img,[-x, 0]) #練習6
         screen.blit(bg_img2,[-x+1600, 0]) #練習7
         screen.blit(bg_img,[-x+3200, 0]) #練習9
+        screen.blit(kk_img,kk_rct)
+
         #screen.blit(kk_img,[300,200]) #練習４
-        screen.blit(kk_img,kk_rct) #練習10.5
+        #screen.blit(kk_img,kk_rct) #練習10.5
+
         pg.display.update()
         tmr += 1        
         clock.tick(200) #練習5
